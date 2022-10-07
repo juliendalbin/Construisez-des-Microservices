@@ -35,6 +35,11 @@ public class ProductController {
     	}
     	return hashMap;
     }
+    
+    @GetMapping("/triProduits")
+    public List<Product> trierProduitsParOrdreAlphabetique () {
+    	return productDao.findAllByOrderByNomAsc();
+    }
 
     @DeleteMapping (value = "/Produits/{id}")
     public void supprimerProduit(@PathVariable int id) {
